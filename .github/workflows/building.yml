@@ -12,8 +12,8 @@ jobs:
       matrix:
         os: [ubuntu-18.04]
         python-version: [3.8]
-        torch-version: [1.9.0, 1.10.0]
-        cuda-version: ['cpu', 'cu111', 'cu113']
+        torch-version: [1.10.0]
+        cuda-version: ['cpu', 'cu113']
         exclude:
           - torch-version: 1.9.0
             cuda-version: 'cu113'
@@ -67,4 +67,4 @@ jobs:
       - name: Publish Wheel
       - uses: actions/upload-artifact@v2
         with:
-          path: ./dist/*.whl  
+          path: ./dist/*.whl
