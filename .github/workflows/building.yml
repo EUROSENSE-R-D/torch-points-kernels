@@ -64,6 +64,7 @@ jobs:
           pip install wheel
           python setup.py bdist_wheel --dist-dir=dist
 
-          #      - name: Publish Wheel
-          #        run: |
-
+      - name: Publish Wheel
+      - uses: actions/upload-artifact@v2
+        with:
+          path: ./dist/*.whl  
