@@ -10,6 +10,9 @@ if [ "${CUDA_VERSION}" = "cpu" ]; then
   export CONDA_CUDATOOLKIT_CONSTRAINT="cpuonly  # [not osx]"
 else
   case $CUDA_VERSION in
+    cu115)
+      export CONDA_CUDATOOLKIT_CONSTRAINT="cudatoolkit==11.5.*"
+      ;; 
     cu113)
       export CONDA_CUDATOOLKIT_CONSTRAINT="cudatoolkit==11.3.*"
       ;;
