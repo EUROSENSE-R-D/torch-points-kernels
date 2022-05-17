@@ -19,5 +19,5 @@ rm -f https://developer.download.nvidia.com/compute/cuda/11.3.0/local_installers
 nvcc -V
 cd ~/
 sudo apt-get install cuda-samples-11-3 -y
-cd /usr/local/cuda-7.0/samples
+cd /usr/local/cuda-11.3/samples
 make
