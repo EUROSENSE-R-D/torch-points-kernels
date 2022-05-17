@@ -13,3 +13,9 @@ sudo apt install cuda-nvcc-11-3 cuda-libraries-dev-11-3
 sudo apt clean
 
 rm -f https://developer.download.nvidia.com/compute/cuda/11.3.0/local_installers/cuda-repo-${OS}-11-3-local_11.3.0-465.19.01-1_amd64.deb
+
+# Testing CUDA install
+cd ~/
+sudo apt-get install cuda-samples-7-0 -y
+cd /usr/local/cuda-7.0/samples
+make
