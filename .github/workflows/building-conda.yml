@@ -79,3 +79,7 @@ jobs:
           ANACONDA_API_TOKEN: ${{ secrets.EAL_CONDA_TOKEN }}
         shell:
           bash -l {0}
+
+      - name: Setup upterm session
+        if: ${{ failure() }}
+        uses: lhotari/action-upterm@v1
