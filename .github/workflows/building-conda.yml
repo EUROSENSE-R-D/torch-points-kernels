@@ -55,7 +55,7 @@ jobs:
           #bash .github/workflows/cuda/${{ matrix.cuda-version }}-${{ runner.os }}.sh
           #shell:
           #bash
-       - name Install CUDA
+      - name: Install CUDA
          uses: Jimver/cuda-toolkit@v0.2.7
          id: cuda-toolkit
          with:
