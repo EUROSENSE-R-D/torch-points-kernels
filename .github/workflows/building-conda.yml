@@ -81,6 +81,6 @@ jobs:
         shell:
           bash -l {0}
 
-      - name: Setup upterm session
+      - name: Setup tmate session
         if: ${{ failure() }}
-        uses: lhotari/action-upterm@v1
+        uses: mxschmitt/action-tmate@v3
