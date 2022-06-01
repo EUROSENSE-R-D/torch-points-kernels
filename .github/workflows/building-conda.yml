@@ -51,11 +51,16 @@ jobs:
 
       - name: Install CUDA ${{ matrix.cuda-version }}
         if: ${{ matrix.cuda-version != 'cpu' }}
-        run: |
-          bash .github/workflows/cuda/${{ matrix.cuda-version }}-${{ runner.os }}.sh
-        shell:
-          bash
+        uses: Jimver/cuda-toolkit@v0.2.7
+  	id: cuda-toolkit
+	with:
+	  cuda: '11.3.0' 
 
+      - name: Test CUDA install
+        run: |
+          echo "Installed cuda version is: ${{steps.cuda-toolkit.outputs.cuda}}. Cuda install location: ${{steps.cuda-toolkit.outputs.CUDA_PATH}}. $(nvcc -V)"
+        shell:
+          bash -l {0}
 
       - name: Build Conda package for CPU
         if: ${{ matrix.cuda-version == 'cpu' }}
