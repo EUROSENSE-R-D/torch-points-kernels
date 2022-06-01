@@ -50,10 +50,10 @@ jobs:
           bash -l {0}
 
       - uses: Jimver/cuda-toolkit@v0.2.7
-        if: ${{ matrix.cuda-version != 'cpu' }}
   	id: cuda-toolkit
 	with:
 	  cuda: '11.3.0' 
+        if: ${{ matrix.cuda-version != 'cpu' }}
 
       - name: Test CUDA install
         run: |
