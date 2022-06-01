@@ -5,8 +5,7 @@ LD_LIBRARY_PATH=${CUDA_HOME}/lib64:${LD_LIBRARY_PATH}
 PATH=${CUDA_HOME}/bin:${PATH}
 
 echo "*** ENV VARIABLES: $CUDA_HOME, $LD_LIBRARY_PATH, $PATH"
-ls /usr/local/cuda
-ls $CUDA_HOME
+ls /usr/local | grep cuda
 
 
 
