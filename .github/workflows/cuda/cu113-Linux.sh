@@ -1,6 +1,6 @@
 #!/bin/bash
 
-OS=ubuntu2004
+OS=ubuntu1804
 
 wget -nv https://developer.download.nvidia.com/compute/cuda/repos/${OS}/x86_64/cuda-${OS}.pin
 sudo mv cuda-${OS}.pin /etc/apt/preferences.d/cuda-repository-pin-600
@@ -13,11 +13,3 @@ sudo apt install cuda-nvcc-11-3 cuda-libraries-dev-11-3
 sudo apt clean
 
 rm -f https://developer.download.nvidia.com/compute/cuda/11.3.0/local_installers/cuda-repo-${OS}-11-3-local_11.3.0-465.19.01-1_amd64.deb
-
-
-# Testing CUDA install
-nvcc -V
-#cd ~/
-#sudo apt-get install cuda-samples-11-3 -y
-#cd /usr/local/cuda-11.3/samples
-# make
