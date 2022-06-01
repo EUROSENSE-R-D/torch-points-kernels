@@ -32,7 +32,8 @@ build:
 test:
   imports:
     - torch_points_kernels
-
+  commands:
+    - "import torch; if torch.cuda.is_available(): import torch_points_kernels.points_cuda"
 about:
   home: https://github.com/torch-points3d/torch-points-kernels
   license: MIT
