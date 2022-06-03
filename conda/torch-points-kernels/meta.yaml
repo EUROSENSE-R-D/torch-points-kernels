@@ -8,7 +8,7 @@ source:
 requirements:
   build:
     - {{ compiler('c') }}  # [win]
-
+    - {{ environ.get('CONDA_CUDATOOLKIT_CONSTRAINT') }}
   host:
     - pip
     - python {{ environ.get('PYTHON_VERSION') }}

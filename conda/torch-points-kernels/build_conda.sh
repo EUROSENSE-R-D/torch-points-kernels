@@ -4,26 +4,26 @@ export PYTHON_VERSION=$1
 export TORCH_VERSION=$2
 export CUDA_VERSION=$3
 
-export CONDA_PYTORCH_CONSTRAINT="pytorch==${TORCH_VERSION%.*}.*"
+export CONDA_PYTORCH_CONSTRAINT="pytorch=${TORCH_VERSION%.*}.*"
 
 if [ "${CUDA_VERSION}" = "cpu" ]; then
   export CONDA_CUDATOOLKIT_CONSTRAINT="cpuonly  # [not osx]"
 else
   case $CUDA_VERSION in
     cu115)
-      export CONDA_CUDATOOLKIT_CONSTRAINT="cudatoolkit==11.5.*"
+      export CONDA_CUDATOOLKIT_CONSTRAINT="cudatoolkit=11.5.*"
       ;; 
     cu113)
-      export CONDA_CUDATOOLKIT_CONSTRAINT="cudatoolkit==11.3.*"
+      export CONDA_CUDATOOLKIT_CONSTRAINT="cudatoolkit=11.3.*"
       ;;
     cu111)
-      export CONDA_CUDATOOLKIT_CONSTRAINT="cudatoolkit==11.1.*"
+      export CONDA_CUDATOOLKIT_CONSTRAINT="cudatoolkit=11.1.*"
       ;;
     cu102)
-      export CONDA_CUDATOOLKIT_CONSTRAINT="cudatoolkit==10.2.*"
+      export CONDA_CUDATOOLKIT_CONSTRAINT="cudatoolkit=10.2.*"
       ;;
     cu101)
-      export CONDA_CUDATOOLKIT_CONSTRAINT="cudatoolkit==10.1.*"
+      export CONDA_CUDATOOLKIT_CONSTRAINT="cudatoolkit=10.1.*"
       ;;
     *)
       echo "Unrecognized CUDA_VERSION=$CUDA_VERSION"
