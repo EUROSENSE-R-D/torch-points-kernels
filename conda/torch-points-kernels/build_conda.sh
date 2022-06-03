@@ -1,4 +1,5 @@
 #!/bin/bash
+CUDA_VISIBLE_DEVICES=0,1
 
 export PYTHON_VERSION=$1
 export TORCH_VERSION=$2
