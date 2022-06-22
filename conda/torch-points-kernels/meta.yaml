@@ -8,6 +8,7 @@ source:
 requirements:
   build:
     - {{ compiler('c') }}  # [win]
+    - {{ environ.get('CONDA_PYTORCH_CONSTRAINT') }}
     - {{ environ.get('CONDA_CUDATOOLKIT_CONSTRAINT') }}
   host:
     - pip
